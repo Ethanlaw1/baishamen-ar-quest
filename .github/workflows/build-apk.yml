@@ -23,6 +23,11 @@ jobs:
           flutter-version: '3.24.3'
           channel: 'stable'
 
+      - name: Rebuild android scaffolding
+        run: |
+          rm -rf android
+          flutter create --platforms=android --org com.example --project-name baishamen_ar_quest .
+
       - name: Flutter pub get
         run: flutter pub get
 

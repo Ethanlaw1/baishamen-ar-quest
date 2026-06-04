@@ -20,13 +20,18 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.3'
+          flutter-version: '3.27.3'
           channel: 'stable'
 
       - name: Rebuild android scaffolding
         run: |
           rm -rf android
           flutter create --platforms=android --org com.example --project-name baishamen_ar_quest .
+
+      - name: Set minSdk and compileSdk
+        run: |
+          sed -i 's/minSdk = flutter.minSdkVersion/minSdk = 24/g' android/app/build.gradle.kts || true
+          sed -i 's/minSdkVersion flutter.minSdkVersion/minSdkVersion 24/g' android/app/build.gradle || true
 
       - name: Flutter pub get
         run: flutter pub get

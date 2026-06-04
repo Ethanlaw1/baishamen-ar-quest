@@ -1,0 +1,28 @@
+name: baishamen_ar_quest
+description: 海口白沙门公园 AR 寻宝游戏
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  geolocator: ^11.0.0
+  flutter_compass: ^0.8.0
+  permission_handler: ^11.0.0
+  shared_preferences: ^2.2.0
+  vector_math: ^2.1.4
+  sensors_plus: ^4.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
